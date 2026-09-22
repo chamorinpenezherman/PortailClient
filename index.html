@@ -1,22 +1,3 @@
-"""
-Genere le fichier HTML de l'espace client Chamorin (donnees Leroy Merlin - Perpignan)
-et l'enregistre dans le dossier PyCharm indique.
-
-A executer avec Python 3 (aucune dependance externe requise) :
-    python generer_espace_client.py
-"""
-
-import os
-
-# ------------------------------------------------------------------
-# 1) Dossier et nom du fichier de sortie -- a adapter si besoin
-# ------------------------------------------------------------------
-DOSSIER_SORTIE = r"C:\Users\Utilisateur\PyCharmMiscProject"
-NOM_FICHIER = "Chamorin_Espace_Client_LeroyMerlin_Perpignan.html"
-
-# ------------------------------------------------------------------
-# 2) Contenu HTML complet (page autonome, sans dependance internet)
-# ------------------------------------------------------------------
 HTML_CONTENT = r"""<!doctype html>
 <html lang="fr">
 <head>
@@ -1040,19 +1021,6 @@ HTML_CONTENT = r"""<!doctype html>
 </body>
 </html>
 """
-
-# ------------------------------------------------------------------
-# 3) Ecriture du fichier
-# ------------------------------------------------------------------
-def generer():
-    os.makedirs(DOSSIER_SORTIE, exist_ok=True)
-    chemin_complet = os.path.join(DOSSIER_SORTIE, NOM_FICHIER)
-    with open(chemin_complet, "w", encoding="utf-8") as f:
-        f.write(HTML_CONTENT)
-    print("Fichier genere avec succes :")
-    print(chemin_complet)
-    return chemin_complet
-
 
 if __name__ == "__main__":
     generer()
